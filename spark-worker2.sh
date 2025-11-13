@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run -d --name spark-worker-2 --hostname spark-worker-2   -e SPARK_WORKER_CORES=1   -e SPARK_WORKER_MEMORY=1G  -e SPARK_DAEMON_JAVA_OPTS=-Dspark.hadoop.fs.defaultFS=hdfs://namenode:9000  --network hadoop_default  -v spark_apps2:/opt/spark/apps  -v spark_warehouse2:/opt/spark/warehouse apache/spark:3.5.1  /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077 --webui-port 8082
