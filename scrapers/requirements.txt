@@ -1,0 +1,10 @@
+requests
+beautifulsoup4
+lxml
+pyyaml
+pandas
+tqdm
+python-dateutil
+sqlalchemy
+psycopg2-binary
+urllib3
