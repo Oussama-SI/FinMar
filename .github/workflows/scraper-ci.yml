@@ -10,6 +10,9 @@ name: Scraper CI
       - 'scrapers/**'
       - '.github/workflows/scraper-ci.yml'
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
