@@ -107,12 +107,3 @@ def test_apply_transform_datetime():
     assert result.month == 12
     assert result.day == 9
     assert apply_transform("invalid", "datetime_maybe") is None
-
-
-if __name__ == '__main__':
-    test_apply_transform_strip()
-    test_apply_transform_float()
-    test_apply_transform_int()
-    test_apply_transform_datetime()
-    test_parse_row_from_sample_page()
-    print("\nAll tests passed!")
