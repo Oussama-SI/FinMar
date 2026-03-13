@@ -1,0 +1,39 @@
+# Example scraper configuration for a simple static HTML table or list page.
+site_name: "example_morocco_finance"
+start_url: "https://example.com/markets/listings"
+user_agent: "FinMarBot/1.0 (+https://github.com/Oussama-SI/FinMar)"
+rate_limit_seconds: 2
+timeout_seconds: 15
+max_retries: 3
+parsing:
+  row_selector: "table.market-table > tbody > tr"
+  fields:
+    symbol:
+      selector: "td.symbol"
+      attr: "text"
+      transform: "strip"
+    name:
+      selector: "td.name"
+      attr: "text"
+      transform: "strip"
+    price:
+      selector: "td.price"
+      attr: "text"
+      transform: "float_maybe"
+    change:
+      selector: "td.change"
+      attr: "text"
+      transform: "strip"
+    market_time:
+      selector: "td.time"
+      attr: "text"
+      transform: "datetime_maybe"
+output:
+  csv: true
+  parquet: true
+  postgres: false
+  postgres_config:
+    uri: "postgresql://user:pass@host:5432/finmar"
+    table_name: "market_listings_example"
+pagination:
+  next_page_selector: "a.next"

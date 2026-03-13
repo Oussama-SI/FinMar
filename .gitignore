@@ -2,3 +2,32 @@
 spark-submit.sh
 
 ssh_key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output directories
+scrapers/output/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
